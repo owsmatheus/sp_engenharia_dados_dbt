@@ -1,0 +1,21 @@
+owsbank:
+  target: dev
+  outputs:
+    dev:
+      type: "postgres"
+      host: "localhost"
+      user: "postgres"
+      password: "{{ env_var('PASS') }}"
+      port: 5432
+      dbname: "postgres" # or database instead of dbname
+      schema: "development"
+      threads: 4
+    prod:
+      type: "postgres"
+      host: "localhost"
+      user: "postgres"
+      password: "{{ env_var('PASS') }}"
+      port: 5432
+      dbname: "postgres" # or database instead of dbname
+      schema: "analytics"
+      threads: 4
