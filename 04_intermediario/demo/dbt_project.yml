@@ -36,3 +36,7 @@ models:
     # Applies to all files under models/example/
     example:
       materialized: view
+
+#seeds:
+#  schema: matheus_seeds
+#  tag: seed
