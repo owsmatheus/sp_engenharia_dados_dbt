@@ -1,0 +1,12 @@
+version: 2
+
+models:
+ - name: d_time
+   description: dimensao tempo"
+   columns:
+    - name: action_month
+      description: coluna referente ao mês
+      tests:
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: 1
+            max_value: 12
