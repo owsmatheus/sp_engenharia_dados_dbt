@@ -1,0 +1,12 @@
+incremental:
+  target: dev
+  outputs:
+    dev:
+      type: "postgres"
+      host: "localhost"
+      user: "postgres"
+      password: "{{ env_var('PASS') }}"
+      port: 5432
+      dbname: "postgres"
+      schema: "incremental"
+      threads: 2
