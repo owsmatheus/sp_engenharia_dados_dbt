@@ -9,7 +9,7 @@ select
 	status                   as movement_status,
 	in_or_out                as movement_in_or_out,
 	'transfer'               as "movement_type"
-FROM {{ ref('transfer_in_out') }}
+FROM transfer_in_out
 union all
 select
 	id                             as movement_id,
@@ -20,6 +20,6 @@ select
 	status                         as movement_status,
 	replace(in_or_out, 'pix_', '') as movement_in_or_out,
 	'pix'                          as "movement_type"
-FROM {{ source('transactional', 'pix_movements') }}
+FROM pix_movements
 
 -- row_number() over () as sk_id

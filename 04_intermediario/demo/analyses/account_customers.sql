@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 select
   a.account_id,
   a.customer_id,
@@ -12,6 +10,6 @@ select
   c.first_name    as customer_first_name,
   c.last_name     as customer_last_name,
   c.cpf           as customer_cpf
-from {{ source('transactional', 'accounts')}} a
-  left join {{ source('transactional', 'customers')}} c
+from accounts a
+  left join customers c
     on c.customer_id = a.customer_id
