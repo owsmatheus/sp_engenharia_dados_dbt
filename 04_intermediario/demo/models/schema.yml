@@ -10,3 +10,11 @@ models:
         - dbt_expectations.expect_column_values_to_be_between:
             min_value: 1
             max_value: 12
+    - name: action_day
+      description: coluna referente ao dia
+      tests:
+        - valid_day:
+              config:
+                severity: error
+                warn_if: "> 0"
+                error_if: "> 32000"
